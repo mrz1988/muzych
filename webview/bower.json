@@ -1,0 +1,26 @@
+{
+  "name": "ZychowskiMedia",
+  "version": "1.0.0",
+  "authors": [
+    "Matt Zychowski"
+  ],
+  "description": "A webapp for managing and playing from a beets music library",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "mithril"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "doc-ready": "~1.0.4"
+  }
+}
