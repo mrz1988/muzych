@@ -32,16 +32,16 @@ vendorTestPattern = ///^
 
 exports.config =
 	paths:
-		public: '../muzych/static'
+		public: '../muzych/client_build'
 	files:
 		javascripts:
 			joinTo:
-				'javascripts/app.js': appPattern
-				'javascripts/vendor.js': vendorScriptsPattern
+				'static/javascripts/app.js': appPattern
+				'static/javascripts/vendor.js': vendorScriptsPattern
 		stylesheets:
 			joinTo:
-				'stylesheets/app.css': appPattern
-				'stylesheets/vendor.css': vendorStylesheetsPattern
+				'static/stylesheets/app.css': appPattern
+				'static/stylesheets/vendor.css': vendorStylesheetsPattern
 	modules:
 		nameCleaner: (path) ->
 			path.replace(///^

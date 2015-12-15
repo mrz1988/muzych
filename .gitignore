@@ -5,4 +5,4 @@ node_modules/
 bower_components/
 
 # FrontEnd build output
-muzych/static
+muzych/client_build
