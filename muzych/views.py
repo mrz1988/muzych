@@ -1,5 +1,5 @@
 from flask import render_template
-from server import app
+from muzych import app
 
 @app.route('/')
 @app.route('/index')

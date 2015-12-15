@@ -32,7 +32,7 @@ vendorTestPattern = ///^
 
 exports.config =
 	paths:
-		public: '../server/static'
+		public: '../muzych/static'
 	files:
 		javascripts:
 			joinTo:
