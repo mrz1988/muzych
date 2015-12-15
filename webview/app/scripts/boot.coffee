@@ -1,18 +1,27 @@
+DEBUG = on
+
 m = window.m
 docReady = window.docReady
 pubSub = window.amplify
 comm = null
 
+if DEBUG
+	constants =
+		flaskUrl: 'http://localhost:5000'
+else
+	constants =
+		flaskUrl: undefined
+
 AppController = require 'controllers/app'
 appView = require 'views/app'
 
-bootApp = (constants) ->
+bootApp = (consts) ->
 	models = []
 	App =
 		controller: ->
 			new AppController
 				comm: comm
-				constants: constants
+				constants: consts
 				models: models
 				pubSub: pubSub
 		view: appView
@@ -20,4 +29,4 @@ bootApp = (constants) ->
 	m.mount document.body, App
 
 docReady ->
-	bootApp({})
+	bootApp(constants)
