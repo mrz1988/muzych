@@ -1,2 +1,2 @@
-from server import app
+from muzych import app
 app.run(debug=True)

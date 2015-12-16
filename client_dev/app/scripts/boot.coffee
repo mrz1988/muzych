@@ -12,16 +12,19 @@ else
 	constants =
 		flaskUrl: undefined
 
+FlaskApi = require 'comm'
 AppController = require 'controllers/app'
 appView = require 'views/app'
 
-bootApp = (consts) ->
+
+bootApp = (apiUrls) ->
+	api = new FlaskApi constants.flaskUrl, apiUrls
 	models = []
 	App =
 		controller: ->
 			new AppController
-				comm: comm
-				constants: consts
+				flask: api
+				constants: constants
 				models: models
 				pubSub: pubSub
 		view: appView
@@ -29,4 +32,8 @@ bootApp = (consts) ->
 	m.mount document.body, App
 
 docReady ->
-	bootApp(constants)
+	m.request(
+		method: 'GET'
+		url: constants.flaskUrl + '/api'
+		headers: {'Origin': 'localhost'}
+	).then bootApp
