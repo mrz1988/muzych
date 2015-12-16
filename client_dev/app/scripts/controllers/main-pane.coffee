@@ -1,6 +1,6 @@
 m = window.m
 
 module.exports =
-	class HeaderController
+	class MainPaneController
 		constructor: (commArgs) ->
-			@headline = m.prop 'Muzych'
+
