@@ -1,8 +1,10 @@
 *.pyc
 *~
 
+.DS_Store
+
 node_modules/
 bower_components/
 
 # FrontEnd build output
-muzych/client_build
+muzych/static
