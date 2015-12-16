@@ -3,6 +3,27 @@ import json
 from flask import url_for
 from muzych import app
 
+# View MAGIC!
+# This file imports all view route functions from python modules in this directory.
+# No special work is required to register a view function outside of the normal decorators.
+#
+# For the frontend, it adds a special '/api' route, which packages and registers all functions
+# within its 'flask' communication object for convenience. However, it recklessly assumes
+# that you have properly managed your routes and function names such that there is no overlap. (TODO?)
+# The functions are packaged for the frontend in camelCase so no conventions are broken there.
+#
+# Example:
+#
+# @app.route('/myroute')
+# def my_route()
+#     pass
+#
+# Can be called on the frontend via:
+#
+# commonArgs.flask.myRoute().then handler
+#
+# without any special work required. It should 'Just Work'
+
 module_files = os.listdir(os.path.dirname(__file__))
 
 for f in module_files:

@@ -1,10 +1,15 @@
 wrapConstructor = require 'wrap-constructor'
 
+Header =
+	controller: require 'controllers/header'
+	view: require 'views/header'
+
 SideList =
 	controller: require 'controllers/sidelist'
 	view: require 'views/sidelist'
 
 components = [
+	Header
 	SideList
 ]
 

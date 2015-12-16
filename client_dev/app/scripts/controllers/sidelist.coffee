@@ -1,5 +1,3 @@
-m = window.m
-
 module.exports =
 	class SideListController
 		constructor: (commArgs) ->

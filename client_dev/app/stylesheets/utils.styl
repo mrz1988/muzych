@@ -1,0 +1,16 @@
+@require 'colors'
+
+shadow(offset-x = 0, offset-y = 0, radius = 5px, color = $shadow)
+	-webkit-box-shadow offset-x offset-y radius color
+	-moz-box-shadow offset-x offset-y radius color
+	box-shadow offset-x offset-y radius color
+
+bottom-shadow()
+	-webkit-box-shadow: 0 4px 4px -4px $shadow
+	-moz-box-shadow: 0 4px 4px -4px $shadow
+	box-shadow: 0 4px 4px -4px $shadow
+
+right-shadow()
+	-webkit-box-shadow: 4px 0 4px -4px $shadow
+	-moz-box-shadow: 4px 0 4px -4px $shadow
+	box-shadow: 4px 0 4px -4px $shadow
