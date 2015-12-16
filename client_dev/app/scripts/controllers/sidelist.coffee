@@ -3,5 +3,8 @@ module.exports =
 		constructor: (commArgs) ->
 			@_artists = commArgs.models.artists
 
+		searchOpen: =>
+			return no
+
 		items: =>
 			@_artists.all()

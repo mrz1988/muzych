@@ -10,6 +10,31 @@
 	right-shadow()
 	z-index: 10
 
+.sl-search
+	position: absolute
+	top: $header-height - 3rem
+	left: -2rem
+	background-color: $accent
+	color: rgba(#FFF, 0.8)
+	height: 4rem
+	round(10px)
+	padding-top: 0.6rem
+	padding-left: 2.5rem
+	font-size: 1.8rem
+	z-index: 50
+
+.sl-search:hover
+	color: white
+
+.sl-search > .fa-caret-right
+	margin-left: 0.5rem
+
+.sl-search.closed
+	width: 6.5rem
+
+.sl-search.open
+	width: 22rem
+
 .sl-item
 	height: 4rem
 	width: 100%
@@ -18,3 +43,6 @@
 	text-align: center
 	border-bottom: 1px solid $divider
 	background-color: $light-backdrop
+
+.sl-item:hover
+	background-color: $light-primary
