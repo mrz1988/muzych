@@ -1,10 +1,10 @@
 m = window.m
 
 module.exports =
-	appView = (app) ->
+	listView = (sideList) ->
 		m 'div.app', [
 			m 'ul', (
-				for album in app.artists()
-					m 'li', album
+				for item in sideList.items()
+					m 'li', item
 			)
 		]
