@@ -5,3 +5,9 @@ module.exports =
 		constructor: (commArgs) ->
 			@listIsOpen = m.prop yes
 
+		openList: ->
+			@listIsOpen yes
+
+		closeList: ->
+			@listIsOpen no
+

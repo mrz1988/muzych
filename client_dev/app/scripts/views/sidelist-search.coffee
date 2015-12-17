@@ -21,7 +21,7 @@ module.exports =
 		searchArrowDir = if searchOpen then 'left' else 'right'
 		searchArrowClass = 'fa-caret-' + searchArrowDir
 
-		m 'div.sl-search-panel', [
+		m 'div.sl-search-panel', {id: 'pnl-sidesearch'}, [
 			m 'div.sl-search', {
 				class: if searchOpen then 'open' else ''
 				onclick: animator.toggle()
