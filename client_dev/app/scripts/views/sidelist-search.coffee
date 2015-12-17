@@ -25,7 +25,7 @@ module.exports =
 			m 'div.sl-search', {
 				class: if searchOpen then 'open' else ''
 				onclick: animator.toggle()
-			},[
+			}, [
 				m 'span.fa.fa-lg.fa-search.def-cur'
 				m 'input[type=text].search-input',
 					class: showIf searchOpen

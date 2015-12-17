@@ -15,7 +15,7 @@ module.exports =
 			request = @_deriveUrl url
 			@_request request
 
-		_request: (url) =>
+		_request: (url) ->
 			->
 				console.log "Outgoing request: #{url}"
 				m.request(

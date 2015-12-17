@@ -5,8 +5,8 @@ AnimationMgr = require 'animations/base'
 openProperties =
 	width: '20rem'
 	opacity: '1'
-	"margin-left": '1rem'
-	"margin-right": '1rem'
+	'margin-left': '1rem'
+	'margin-right': '1rem'
 
 closedProperties =
 	width: '0'
@@ -48,7 +48,7 @@ module.exports =
 			m.endComputation()
 
 		_closeBegin: ->
-			m.redraw.strategy("none")
+			m.redraw.strategy('none')
 
 		_closeComplete: =>
 			m.startComputation()

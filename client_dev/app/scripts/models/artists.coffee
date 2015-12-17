@@ -10,7 +10,6 @@ module.exports =
 				'artists:refetch': @_refetch
 
 		_refetch: =>
-			console.log "refetch..."
 			@_flask.artists().then @_update
 
 		_update: (artists) =>
