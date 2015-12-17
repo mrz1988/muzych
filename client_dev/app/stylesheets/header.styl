@@ -2,20 +2,13 @@
 @require 'colors'
 @require 'layout'
 
+
 div.header-topbar
-	position: absolute
 	background-color: $dark-primary
-	top: 0
-	left: 0
-	right: 0
+	width: 100%
 	height: $header-topbar-height
-	z-index: 30
 
 div.header
-	position: absolute
-	top: $header-topbar-height
-	left: -4px
-	right: 0
 	height: $header-height - $header-topbar-height
 	color: white
 	padding-top: 1.5rem
@@ -24,4 +17,3 @@ div.header
 	font-size: 2.7rem
 	bottom-shadow()
 	background-color: $primary
-	z-index: 30

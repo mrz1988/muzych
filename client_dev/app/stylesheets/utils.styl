@@ -5,6 +5,11 @@ shadow(offset-x = 0, offset-y = 0, radius = 5px, color = $shadow)
 	-moz-box-shadow offset-x offset-y radius color
 	box-shadow offset-x offset-y radius color
 
+depth-shadow()
+	-webkit-box-shadow: 5px 5px 6px -3px $shadow
+	-moz-box-shadow: 5px 5px 6px -3px $shadow
+	box-shadow: 5px 5px 6px -3px $shadow
+
 bottom-shadow()
 	-webkit-box-shadow: 0 5px 6px -6px $shadow
 	-moz-box-shadow: 0 5px 6px -6px $shadow
@@ -19,6 +24,9 @@ round(size = 10px)
 	-webkit-border-radius: size
 	-moz-border-radius: size
 	border-radius: size
+
+stroke(clr)
+	-webkit-text-stroke: 1px clr
 
 // Font Awesome extensions
 

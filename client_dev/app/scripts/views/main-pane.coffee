@@ -2,4 +2,4 @@ m = window.m
 
 module.exports =
 	mainPaneView = (mainPane) ->
-		m 'div.main-pane'
+		m 'div.main-panel'

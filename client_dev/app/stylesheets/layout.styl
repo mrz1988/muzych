@@ -1,3 +1,44 @@
 $header-height = 7rem
 $header-topbar-height = 0.8rem
-$sidelist-width = 25rem
+$sidelist-width = 30rem
+
+// Primary components in top-down order
+
+// Search panel for side list
+.sl-search-panel
+	z-index: 50
+	position: absolute
+	top: $header-height - 3.5rem
+	left: 0
+
+// Primary app header
+div.header-panel
+	z-index: 40
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+
+// Side list
+div.sl-panel
+	z-index: 30
+	position: absolute
+	top: $header-height
+	left: 0
+
+// Side list hide button
+div.sl-shutter-panel
+	z-index: 35
+	position: absolute
+	top: $header-height - 1rem
+	left: $sidelist-width - 1rem
+
+// Main app window
+div.main-panel
+	z-index: 0
+	position: absolute
+	top: $header-height
+	left: $sidelist-width
+	bottom: 0
+	right: 0
+	background: $medium-backdrop
