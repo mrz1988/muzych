@@ -4,7 +4,9 @@
 
 .sidelist
 	position: absolute
-	width: 25rem
+	width: 30rem
+	overflow-y: scroll
+	overflow-x: hidden
 	top: $header-height
 	bottom: 0
 	right-shadow()
@@ -18,7 +20,7 @@
 	color: rgba(#FFF, 0.8)
 	height: 4rem
 	round(10px)
-	padding-top: 0.6rem
+	padding-top: 0.5rem
 	padding-left: 2.5rem
 	font-size: 1.8rem
 	z-index: 50
@@ -26,14 +28,29 @@
 .sl-search:hover
 	color: white
 
+// animation hack
+// makes the magnifying glass not move on
+// input appearance
+.sl-search > .fa-search
+	line-height: 2.0rem
+.sl-search.open > .fa-search
+	line-height: 0.5rem
+
 .sl-search > .fa-caret-right
 	margin-left: 0.5rem
 
-.sl-search.closed
-	width: 6.5rem
+.search-arrow
+	float: right
+	margin-top: 0.5rem
+	margin-right: 0.5rem
 
-.sl-search.open
-	width: 22rem
+.search-input
+	border: 1px solid white
+	background: $dark-accent
+	text-align: right
+	padding-right: 1rem
+	color: white
+	width: 0
 
 .sl-item
 	height: 4rem
