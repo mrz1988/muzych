@@ -13,6 +13,12 @@ updateFocus = (hasFocus) ->
 		if hasFocus
 			el.focus()
 
+suppressEvent = (callback) ->
+	(e) ->
+		console.log "suppressing event"
+		e.preventDefault()
+		callback(e)
+
 module.exports =
 	sideSearchView = (sideSearch) ->
 		searchOpen = sideSearch.searchBarVisible()
@@ -22,7 +28,7 @@ module.exports =
 		m 'div.sl-search-panel', {id: 'pnl-sidesearch'}, [
 			m 'div.sl-search', {
 				class: if searchOpen then 'open' else ''
-				onclick: sideSearch.toggleSearch
+				onclick: suppressEvent(sideSearch.toggleSearch)
 			}, [
 				m 'span.fa.fa-lg.fa-search.def-cur'
 				m 'input[type=text].search-input',

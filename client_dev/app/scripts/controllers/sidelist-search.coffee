@@ -37,7 +37,7 @@ module.exports =
 			@_animation.addRule
 				ids: ['sidelist-search']
 				whenOpen:
-					width: '20rem'
+					width: '30rem'
 					opacity: '1'
 					'margin-left': '1rem'
 					'margin-right': '1rem'

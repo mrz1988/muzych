@@ -1,6 +1,8 @@
-$header-height = 7rem
+$header-height = 5rem
 $header-topbar-height = 0.8rem
-$sidelist-width = 30rem
+$footer-height = 4rem
+$footer-bottom-height = 0.5rem
+$sidelist-width = 34rem
 
 // Primary components in top-down order
 
@@ -8,8 +10,22 @@ $sidelist-width = 30rem
 .sl-search-panel
 	z-index: 50
 	position: absolute
-	top: $header-height - 3.5rem
+	bottom: 0.5rem
 	left: 0
+
+// Header back button
+div.back-button-panel
+	z-index: 50
+	position: absolute
+	top: $header-topbar-height
+	left: 0
+
+// Header hamburger
+div.hamburger-panel
+	z-index: 50
+	position: absolute
+	top: $header-topbar-height
+	left: 33rem
 
 // Primary app header
 div.header-panel
@@ -18,25 +34,38 @@ div.header-panel
 	top: 0
 	left: 0
 	right: 0
+	shadow()
+
+// Primary app footer
+div.footer-panel
+	z-index: 40
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	shadow()
 
 // Side list
 div.sl-panel
 	z-index: 30
+	shadow()
 	position: absolute
 	top: $header-height
+	overflow: scroll
 	left: 0
+	bottom: $footer-height
+	background-color: $dark-backdrop
 
 // Side list hide button
 div.sl-shutter-panel
-	z-index: 35
+	z-index: 25
 	position: absolute
-	top: $header-height - 1rem
+	top: $header-height + 3rem
 	left: 0
-	margin-left: $sidelist-width - 1rem
+	margin-left: $sidelist-width
 
 // Main app window
 div.main-panel
-	z-index: 0
 	position: absolute
 	top: $header-height
 	left: $sidelist-width

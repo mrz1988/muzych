@@ -16,14 +16,22 @@ bottom-shadow()
 	box-shadow: 0 5px 6px -6px $shadow
 
 right-shadow()
-	-webkit-box-shadow: 5px 0 5px -5px $shadow
-	-moz-box-shadow: 5px 0 5px -5px $shadow
-	box-shadow: 5px 0 5px -5px $shadow
+	-webkit-box-shadow: 5px 0 7px -6px $text
+	-moz-box-shadow: 5px 0 7px -6px $text
+	box-shadow: 5px 0 7px -6px $text
 
 round(size = 10px)
 	-webkit-border-radius: size
 	-moz-border-radius: size
 	border-radius: size
+
+round-right(size = 10px)
+	-webkit-border-top-right-radius-right: size
+	-webkit-border-bottom-right-radius-bottom: size
+	-moz-border-top-right-radius: size
+	-moz-border-bottom-right-radius: size
+	border-top-right-radius: size
+	border-bottom-right-radius: size
 
 stroke(clr)
 	-webkit-text-stroke: 1px clr

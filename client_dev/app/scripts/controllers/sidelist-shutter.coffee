@@ -24,7 +24,7 @@ module.exports =
 				whenOpen:
 					left: '0'
 				whenClosed:
-					left: '-28.5rem'
+					left: '-31rem'
 
 			@_animation.addRule
 				ids: ['pnl-main']

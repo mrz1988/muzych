@@ -28,10 +28,12 @@ module.exports =
 			@_states[control] = newState
 			@_pubSub.publish 'ui-state:updated'
 			queuedState = @_flush({control: control})
+			console.log "queued state: #{queuedState} newState: #{newState}"
 			if queuedState is newState
 				@_locks[control] = off
 				@_queues[control] = []
 			else
+				console.log "updating animation..."
 				@_update control: control, newState: queuedState
 
 		stateOf: ({control}) =>
@@ -59,12 +61,17 @@ module.exports =
 		_flush: ({control}) =>
 			console.log "flushing #{control}"
 			queue = @_queues[control]
+			console.log "Queue:"
+			console.dir queue
 			newState = @_states[control]
 			for item in queue
 				if item is 'toggle'
 					newState = not newState
+					console.log "toggling newState to #{newState}"
 				else
 					newState = item
+					console.log "setting newState to #{newState}"
+			console.log "New state from queue: #{newState}"
 			@_queues[control] = []
 			newState
 
