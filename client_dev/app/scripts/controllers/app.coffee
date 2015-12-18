@@ -28,12 +28,12 @@ SideListShutter =
 	controller: require 'controllers/sidelist-shutter'
 	view: require 'views/sidelist-shutter'
 
-MainPane =
-	controller: require 'controllers/main-pane'
-	view: require 'views/main-pane'
+MainPanel =
+	controller: require 'controllers/main-pnl'
+	view: require 'views/main-pnl'
 
 components = [
-	MainPane
+	MainPanel
 	Header
 	Footer
 	BackButton
