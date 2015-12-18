@@ -5,9 +5,7 @@ module.exports =
 	class Animation
 		constructor: (commonArgs, name, defaultState) ->
 			@_pubSub = commonArgs.pubSub
-			console.dir commonArgs
 			@_uistate = commonArgs.models.uistate
-			console.log "hey"
 			@_name = name
 			@_pubSub.subscribe 'ui-state:update', @_changeState
 			@_rules = []
