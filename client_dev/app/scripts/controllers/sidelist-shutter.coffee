@@ -20,15 +20,26 @@ module.exports =
 
 		_configureAnimation: =>
 			@_animation.addRule
-				ids: ['pnl-sidelist', 'pnl-sidesearch', 'pnl-sideshutter']
+				ids: ['pnl-sidelist', 'pnl-sidesearch']
 				whenOpen:
 					left: '0'
 				whenClosed:
 					left: '-33rem'
 
 			@_animation.addRule
+				ids: ['pnl-sideshutter']
+				whenOpen:
+					left: '0.5rem'
+					height: '3.3rem'
+					'line-height': '2rem'
+				whenClosed:
+					left: '-0.5rem'
+					height: '6.3rem'
+					'line-height': '5rem'
+
+			@_animation.addRule
 				ids: ['pnl-main']
 				whenOpen:
-					left: '34.5rem'
+					left: '35rem'
 				whenClosed:
 					left: '1.5rem'

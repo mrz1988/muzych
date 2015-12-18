@@ -2,16 +2,17 @@
 @require 'utils'
 
 .sidelist-shutter
-	height: 11rem
-	width: 2.5rem
-	round-right(10px)
-	background-color: rgba($medium-gray, 0.3)
+	height: 100%
+	width: 100%
+	round(0.2rem)
+	background-color: $backdrop-accent
 	color: $faded-white
-	padding-left: 0.2rem
-	padding-top: 4rem
+	padding-top: 0.5rem
+	text-align: center
 	depth-shadow()
 
 .sidelist-shutter:hover
 	color: white
-	background-color: rgba($medium-gray, 0.4)
 
+.sidelist-shutter > .fa-caret-right
+	padding-left: 1.1rem

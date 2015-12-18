@@ -45,9 +45,18 @@ div.footer-panel
 	right: 0
 	shadow()
 
+// Side list hide button
+div.sl-shutter-panel
+	z-index: 30
+	position: absolute
+	top: $header-height + 0.5rem
+	left: 0.5rem
+	height: 3.3rem
+	width: 3.3rem
+
 // Side list
 div.sl-panel
-	z-index: 30
+	z-index: 20
 	shadow()
 	position: absolute
 	top: $header-height
@@ -56,13 +65,6 @@ div.sl-panel
 	bottom: $footer-height
 	background-color: $dark-backdrop
 
-// Side list hide button
-div.sl-shutter-panel
-	z-index: 25
-	position: absolute
-	top: $header-height + 3rem
-	left: 0
-	margin-left: $sidelist-width
 
 // Main app window
 div.main-panel
@@ -71,4 +73,8 @@ div.main-panel
 	left: $sidelist-width
 	bottom: 0
 	right: 0
+	padding-left: 4rem
+	padding-top: 2rem
 	background: $medium-backdrop
+	white-space: nowrap
+	overflow: hidden

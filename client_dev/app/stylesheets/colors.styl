@@ -6,14 +6,21 @@ $dark-primary = #FFA000
 $primary = #FFC107
 $light-primary = #FFFAE3
 $dark-accent = #CF4259
-$accent = #FF5772
+$accent = #DE2A16
+//$accent = #FF5772
 
-// text/grays
-$text = #212121
-$light-backdrop = #FFFFFF
-$medium-backdrop = #F0F0F0
-$dark-backdrop = #D2D2D2
+// text
 $secondary-text = #727272
+$text = #212121
+
+// backdrops - slightly blue?
+$backdrop-hue = 215
+$backdrop-saturation = 18%
+
+$light-backdrop = hsl($backdrop-hue, $backdrop-saturation, 100%)
+$medium-backdrop = hsl($backdrop-hue, $backdrop-saturation, 95%)
+$dark-backdrop = hsl($backdrop-hue, $backdrop-saturation, 90%)
+$backdrop-accent = hsl($backdrop-hue, 35%, 75%)
 $divider = #E6E6E6
 $shadow = #B6B6B6
 $medium-gray = #909090
