@@ -3,7 +3,7 @@ m = window.m
 module.exports =
 	class SideListController
 		constructor: (commArgs) ->
-			@_artists = commArgs.models.artists
+			@_sidelist = commArgs.models.sidelist
 
 		items: =>
-			@_artists.query()
+			@_sidelist.query()
