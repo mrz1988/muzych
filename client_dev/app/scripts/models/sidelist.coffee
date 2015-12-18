@@ -36,16 +36,19 @@ module.exports =
 
 			results = []
 			for item in @_list
-				entry = item.toLowerCase()
+				entry = item.text.toLowerCase()
 				if entry.indexOf(query) > -1
 					results.push item
 			results
 
 		all: =>
-			return @_list
+			@_list
+
+		selectionMade: =>
+			@_selectedKey?
 
 		isSelected: ({key}) =>
-			return @_selectedKey is key
+			@_selectedKey is key
 
 		setSelected: ({key}) =>
 			@_selectedKey = key

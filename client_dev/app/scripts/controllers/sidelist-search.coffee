@@ -6,7 +6,7 @@ Animation = require 'animations'
 module.exports =
 	class SideListSearchController
 		constructor: (commArgs) ->
-			@_artists = commArgs.models.artists
+			@_sidelist = commArgs.models.sidelist
 			@_uistate = commArgs.models.uistate
 			@_animation = new Animation commArgs, SEARCHBAR, off
 			@_configureAnimation()
@@ -14,7 +14,7 @@ module.exports =
 
 		changeSearch: (query) =>
 			m.startComputation()
-			@_artists.changeQuery(query)
+			@_sidelist.changeQuery(query)
 			m.endComputation()
 
 		toggleSearch: =>
