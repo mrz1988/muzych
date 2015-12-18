@@ -1,22 +1,49 @@
 m = window.m
 
+SEARCHBAR = 'sl-search'
+Animation = require 'animations/base'
+
 module.exports =
 	class SideListSearchController
 		constructor: (commArgs) ->
 			@_artists = commArgs.models.artists
+			@_uistate = commArgs.models.uistate
+			@_animation = new Animation commArgs, SEARCHBAR, off
+			@_configureAnimation()
 			@_searchQuery = ''
-			@searchHasFocus = m.prop(no)
-			@searchIsOpen = m.prop(no)
 
 		changeSearch: (query) =>
 			m.startComputation()
 			@_artists.changeQuery(query)
 			m.endComputation()
 
-		closeSearch: =>
-			@searchHasFocus no
-			@searchIsOpen no
+		toggleSearch: =>
+			@_uistate.changeState
+				control: SEARCHBAR
+				newState: 'toggle'
 
-		openSearch: =>
-			@searchIsOpen yes
-			@searchHasFocus yes
+		closeSearch: =>
+			@_uistate.changeState
+				control: SEARCHBAR
+				newState: off
+
+		searchIsOpen: =>
+			@_uistate.stateOf {control: SEARCHBAR}
+
+		searchBarVisible: =>
+			@searchIsOpen() or @_uistate.isAnimating {control: SEARCHBAR}
+
+		_configureAnimation: =>
+			@_animation.addRule
+				ids: ['sidelist-search']
+				whenOpen:
+					width: '20rem'
+					opacity: '1'
+					'margin-left': '1rem'
+					'margin-right': '1rem'
+				whenClosed:
+					width: '0'
+					opacity: '0'
+					'margin-left': '0'
+					'margin-right': '0'
+

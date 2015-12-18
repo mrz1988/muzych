@@ -1,10 +1,7 @@
 m = window.m
 
-ShutterAnimator = require 'animations/sidelist-shutter'
-
 module.exports =
 	shutterView = (shutter) ->
-		animator = new ShutterAnimator shutter
 
 		listOpen = shutter.listIsOpen()
 		shutterArrowDir = if listOpen then 'left' else 'right'
@@ -12,7 +9,7 @@ module.exports =
 
 		m 'div.sl-shutter-panel', {id: 'pnl-sideshutter'}, [
 			m 'div.sidelist-shutter', {
-				onclick: animator.toggle()
+				onclick: shutter.toggleList
 			}, [
 				m 'span.fa.fa-2x.def-cur', class: shutterArrowClass
 			]
