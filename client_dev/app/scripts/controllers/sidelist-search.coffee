@@ -1,7 +1,7 @@
 m = window.m
 
 SEARCHBAR = 'sl-search'
-Animation = require 'animations/base'
+Animation = require 'animations'
 
 module.exports =
 	class SideListSearchController

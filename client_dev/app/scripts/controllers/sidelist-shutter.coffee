@@ -1,7 +1,7 @@
 m = window.m
 
 SIDESHUTTER = 'sl-shutter'
-Animation = require 'animations/base'
+Animation = require 'animations'
 
 module.exports =
 	class SideListShutterController
