@@ -24,11 +24,11 @@ module.exports =
 				whenOpen:
 					left: '0'
 				whenClosed:
-					left: '-31rem'
+					left: '-33rem'
 
 			@_animation.addRule
 				ids: ['pnl-main']
 				whenOpen:
-					left: '30rem'
+					left: '34.5rem'
 				whenClosed:
 					left: '1.5rem'
