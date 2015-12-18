@@ -5,10 +5,11 @@ module.exports =
 		constructor: (commonArgs) ->
 			super commonArgs
 			@_list = []
-			@_category = 'artists'
 			@_searchQuery = ''
-			@_refetch()
-			@_selectedKey = undefined
+			@_pubSubHandlers =
+				'sidelist:navigate': @_navigate
+			@connectHandlers()
+			@_navigate {category: 'artists', selection: undefined}
 
 		listArtists: =>
 			@_category = 'artists'
@@ -61,6 +62,16 @@ module.exports =
 						id: artist
 						text: artist
 			@_list = newList
+
+		_navigate: ({category, selection}) =>
+			@_changeCategory category
+			@_selectedKey = selection
+
+		_changeCategory: (category) =>
+			if category is @_category
+				return
+			@_category = category
+			@_refetch()
 
 		_refetch: =>
 			if @_category is 'artists'

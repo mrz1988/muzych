@@ -43,6 +43,5 @@ module.exports =
 				results[id] = @_albums[id]
 			results
 
-		getByArtist: ({artist}) =>
-			ids = @_flask.artistAlbumIds(artist)()
-			getByIds ids: ids
+		idsByArtist: ({artist}) =>
+			@_flask.artistAlbumIds(artist)()
