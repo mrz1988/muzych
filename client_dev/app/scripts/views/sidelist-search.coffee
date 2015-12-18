@@ -5,7 +5,6 @@ m = window.m
 # during animation. This will effectively hide the element until
 # we are ready to see it
 showIf = (visible) ->
-	console.log "showIf: #{visible}"
 	if visible then '' else 'hide-hack'
 
 updateFocus = (hasFocus) ->
@@ -15,7 +14,6 @@ updateFocus = (hasFocus) ->
 
 suppressEvent = (callback) ->
 	(e) ->
-		console.log "suppressing event"
 		e.preventDefault()
 		callback(e)
 
