@@ -32,11 +32,20 @@ def artists():
     all_artists = [row[0] for row in rows]
     return json.dumps(all_artists)
 
-@app.route('/albums/<artistjson>')
-def albums(artistjson):
+@app.route('/albums/byartist/<artistjson>')
+def artist_album_ids(artistjson):
     artist = json.loads(artistjson)['artist']
-    query = "SELECT * FROM albums WHERE albumartist = '%s'" % artist
+    query = "SELECT id FROM albums WHERE albumartist = '%s'" % artist
     with g.lib.transaction() as tx:
         #rows = tx.query("SELECT DISTINCT albumartist FROM albums")[0][0]
         rows = tx.query(query)
     return serialize_rows(rows)
+
+@app.route('/albums/byids/<ids>')
+def albums(ids):
+    ids = json.loads(ids)
+    results = []
+    for id in ids:
+        row = g.lib.get_album(id)
+        results.append(serialize_row(row))
+    return json.dumps(results)
