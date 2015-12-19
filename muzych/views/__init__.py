@@ -1,7 +1,8 @@
 import os
 import json
-from flask import url_for
+from flask import url_for, g
 from muzych import app
+from beets.library import Library
 
 # View MAGIC!
 # This file imports all view route functions from python modules in this directory.
@@ -58,3 +59,9 @@ def api():
             method_name = to_camel_case(rule.endpoint)
             api_list[method_name] = url
     return json.dumps(api_list)
+
+
+# Load Beets
+@app.before_request
+def before_request():
+    g.lib = Library("F:/data/musiclibrary.blb")
